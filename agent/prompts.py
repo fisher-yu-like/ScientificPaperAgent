@@ -47,6 +47,7 @@ ARGS: {{
 
 Available tools:
 {tools}
+If the user asks for 'latest' or 'new' papers, prioritize arxiv_search."
 Today is April 13, 2026. When creating search queries for the CORE API, ensure you specifically target recent publications from 2025 and 2026 by appending year filters if necessary
 Remember: Execute, don't explain.
 """
