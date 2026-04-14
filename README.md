@@ -165,3 +165,7 @@ While the integration of tools and API is functional, the locally hosted Mistral
    - Add fact-checking mechanisms
 
 Note: For production use cases requiring high accuracy and reliability, consider using OpenAI's models or other cloud-based solutions.
+
+## improvement
+1.针对传统 API 数据滞后问题，集成 arXiv 实时接口，通过自定义 Prompt 语义引导，实现了对 2025-2026 年最新论文的精准检索与分析。
+2.实现了“英搜中报”的跨语言处理逻辑；设计了文件持久化模块，支持在 Agent 深度解读的同时，自动将原始 PDF 归档至本地，构建个人科研知识库
