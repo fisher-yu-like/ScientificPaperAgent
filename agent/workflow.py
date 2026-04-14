@@ -20,6 +20,7 @@ from .utils import format_tools_description, call_stream
 
 def decision_making_node(state: AgentState):
     """Entry point of the workflow using Mistral"""
+    print("decision")
     system_prompt = SystemMessage(content=decision_making_prompt)
     messages = [system_prompt] + state["messages"]
     messages_str = "\n".join([f"{msg.type}: {msg.content}" for msg in messages])
@@ -32,6 +33,7 @@ def decision_making_node(state: AgentState):
 
 def router(state: AgentState):
     """Router directing the user query to the appropriate branch of the workflow."""
+    print("router")
     if state["requires_research"]:
         return "planning"
     else:
@@ -39,6 +41,7 @@ def router(state: AgentState):
 
 def planning_node(state: AgentState):
     """Planning node using Mistral"""
+    print("plan")
     system_prompt = SystemMessage(content=planning_prompt.format(
         tools=format_tools_description(tools)
     ))
@@ -51,6 +54,7 @@ def planning_node(state: AgentState):
 
 def tools_node(state: AgentState):
     """Tool call node that executes the tools based on the plan."""
+    print("toolcall")
     outputs = []
     for tool_call in state["messages"][-1].tool_calls:
         tool_result = tools_dict[tool_call["name"]].invoke(tool_call["args"])

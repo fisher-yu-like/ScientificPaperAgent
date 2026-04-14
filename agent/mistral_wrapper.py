@@ -1,12 +1,12 @@
 import json
-from langchain_community.llms import Ollama
-from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
+from langchain_ollama import OllamaLLM
+from langchain_core.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from .models import DecisionMakingOutput, JudgeOutput
 
 class MistralWrapper:
     def __init__(self, model_name="mistral", temperature=0.0, verbose=False):
         callbacks = [StreamingStdOutCallbackHandler()] if verbose else []
-        self.llm = Ollama(
+        self.llm = OllamaLLM(
             model=model_name,
             temperature=temperature,
             callbacks=callbacks

@@ -47,7 +47,7 @@ ARGS: {{
 
 Available tools:
 {tools}
-
+Today is April 13, 2026. When creating search queries for the CORE API, ensure you specifically target recent publications from 2025 and 2026 by appending year filters if necessary
 Remember: Execute, don't explain.
 """
 
@@ -77,6 +77,7 @@ When processing tool outputs:
 4. Identify research gaps or future directions
 5. Suggest next steps if more research is needed
 
+"Please provide the final summary and all explanations in Chinese. However, keep technical terms (like model names or specific algorithms) in their original English form if appropriate."
 # EXTERNAL KNOWLEDGE
 
 ## CORE API
